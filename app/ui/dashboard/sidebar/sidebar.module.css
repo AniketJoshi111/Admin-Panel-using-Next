@@ -40,7 +40,7 @@
     margin: 10px 0px;
   }
   
-  /* .logout{
+   .logout{
     padding: 20px;
     margin: 5px 0px;
     display: flex;
@@ -52,8 +52,9 @@
     border: none;
     color: white;
     width: 100%;
+    
   }
   
   .logout:hover{
     background-color: #2e374a;
-  } */
+  } 
