@@ -3,6 +3,7 @@ import Transactions from "../ui/dashboard/transactions/transactions"
 import Chart from "../ui/dashboard/chart/chart"
 import styles from "../ui/dashboard/dashboard.module.css"
 import Rightbar from "../ui/dashboard/rightbar/rightbar"
+
 const dashboard = () => {
   return (
     <div className={styles.wrapper}>

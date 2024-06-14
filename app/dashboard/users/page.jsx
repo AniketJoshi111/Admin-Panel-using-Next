@@ -5,8 +5,11 @@ import Search from "@/app/ui/dashboard/search/search";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import { fetchUsers } from "@/app/lib/data";
 
-const Userpage = async () => {
-  const users = await fetchUsers();
+const Userpage = async ({searchParams}) => {
+  const q = searchParams?.q || "";
+  const page = searchParams?.page || "";
+  const users = await fetchUsers(q,page);
+  console.log(users);
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -42,9 +45,9 @@ const Userpage = async () => {
                 </div>
               </td>
               <td>{user.email}</td>
-              <td>{new Date(user.createdAt).toLocaleDateString()}</td>
-              <td>{user.role}</td>
-              <td>{user.status}</td>
+              <td>{user.createdAt?.toString().slice(4,16)}</td>
+              <td>{user.isAdmin ? "Admin":"Client"}</td>
+              <td>{user.isActive ? "active":"passive"}</td>
               <td>
                 <div className={styles.buttons}>
                   <Link href={`/dashboard/users/${user.id}`}>
