@@ -1,4 +1,5 @@
 
+import { revalidatePath } from "next/cache";
 import { User } from "./models";
 import { connectToDB } from "./utils";
 
@@ -22,4 +23,5 @@ export const addUser = async (formData) =>{
     } catch (error) {
         throw new Error(error);
     }
+    revalidatePath("/dashboard/users");
 } 
