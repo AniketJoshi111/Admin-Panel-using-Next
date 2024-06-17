@@ -5,8 +5,13 @@
 }
 
 .button {
+
     padding:5px 10px ;
     cursor: pointer;
+    background-color: azure;
+    color:black ;
+    border-radius: 5px;
+    font-weight: normal;
 }
 
 .button:disabled {
